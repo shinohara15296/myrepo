@@ -4,13 +4,6 @@ from datetime import datetime, timedelta
 client = discord.Client()
 
 @client.event
-async def on_ready():
-    print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
-    print('------')
-
-@client.event
 async def on_voice_state_update(member, before, after): 
     if member.guild.id == 600978911761006593 and (before.channel != after.channel):
         now = datetime.utcnow() + timedelta(hours=9)
